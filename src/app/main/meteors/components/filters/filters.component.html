@@ -1,0 +1,29 @@
+<aside class="menu">
+  <header>
+  <span class="header-row icon">
+    <i class="fas fa-search"></i>
+  </span>
+  <span class="header-row icon-text">
+    <h1>{{ size }} Results</h1>
+  </span>
+  </header>
+  <form [formGroup]="form">
+    <div class="control has-icons-left">
+      <div class="select">
+        <select formControlName="year">
+          <option>
+            Select Year
+          </option>
+
+          <option *ngFor="let year of years">
+            {{ year }}
+          </option>
+        </select>
+      </div>
+      <div class="icon is-small is-left">
+        <i class="fas fa-calendar"></i>
+      </div>
+    </div>
+    <input numbersOnly formControlName="mass" class="input is-rounded" type="text" placeholder="Min Mass">
+  </form>
+</aside>

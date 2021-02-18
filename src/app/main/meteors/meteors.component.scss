@@ -1,0 +1,29 @@
+.page-container {
+  position: relative;
+  height: 100%;
+  display: flex;
+  margin: 40px 75px;
+  flex-direction: row;
+
+  app-table {
+    margin-left: 15%;
+  }
+
+  .modal-message {
+    color: black;
+  }
+}
+
+.progress-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 1000px) {
+  app-table {
+    margin-left: 50px !important;
+  }
+}
+

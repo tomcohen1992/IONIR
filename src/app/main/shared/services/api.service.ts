@@ -4,11 +4,11 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class ApiService {
-  private ROOT_URL = 'https://60254db336244d001797bf80.mockapi.io';
+  private ROOT_URL = ' https://data.nasa.gov/resource/y77d-th95.json';
 
   constructor(private http: HttpClient) { }
 
-  getUsers(page: number, search: string): Observable<any> {
-    return this.http.get(`${this.ROOT_URL}/db_scheme?page=${page}&limit=20&search=${search}`);
+  getUsers(): Observable<any> {
+    return this.http.get(`${this.ROOT_URL}`);
   }
 }

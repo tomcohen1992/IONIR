@@ -1,0 +1,50 @@
+aside {
+  display: flex;
+  flex-direction: column;
+
+  height: 400px;
+  width: 200px;
+
+  border-radius: 10%;
+  box-shadow: 1.5px 1.5px 5px 6px #ccc;
+
+  transition: ease-in-out 0.7s;
+
+  &:hover {
+    margin: 5px;
+    box-shadow: 0px 25px 30px 1px indianred;
+    border-radius: 20%;
+  }
+
+  header {
+    padding-top: 35px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+
+    > .icon {
+      font-size: 30px;
+    }
+
+    h1 {
+      font-size: 25px;
+      text-transform: capitalize;
+      padding-top: 30px;
+    }
+  }
+
+  form {
+    place-content: center;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    flex: 1;
+
+    input {
+      margin-top: 10px;
+      width: 104px;
+    }
+  }
+}
+

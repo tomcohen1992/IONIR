@@ -2,32 +2,12 @@
   overflow-y: scroll;
   max-height: 500px;
   text-align: center;
-  margin: 15px 0px;
   display: flex;
   justify-content: center;
-
-  .pagination-loading {
-    position: fixed;
-    top: 50%;
-    z-index: 100;
-
-    .progress {
-      width: 100px;
-    }
-  }
-
-  .infinite-loading {
-    position: absolute;
-    bottom: -10%;
-    z-index: 100;
-
-    .progress {
-      width: 100px;
-    }
-  }
+  width: 500px;
 
   .table {
-    width: 500px;
+    width: 100%;
     background-color: transparent;
     position: sticky;
     top: 0;
@@ -35,7 +15,7 @@
 
     tbody {
       tr {
-        transition: ease-in background-color 1s;
+        transition: ease-in background-color 0.5s;
         cursor: pointer;
 
         &:hover {
@@ -45,32 +25,17 @@
     }
 
     thead tr:nth-child(1) th{
-      abbr {
-        text-decoration: none;
-      }
-
       text-transform: capitalize;
-      text-decoration: none;
       background: black;
       position: sticky;
-      top: 0;
-      z-index: 10;
     }
   }
 }
 
-.blur-row {
-  filter: blur(0.8px);
-  opacity: 0.5;
-  transition: filter .2s, opacity .2s;
-}
 
-.no-result {
-  text-align: center;
-  height: 100px;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
+// check
+th {
+  white-space: nowrap;
+  min-width: 100px;
+  max-width: 110px;
 }

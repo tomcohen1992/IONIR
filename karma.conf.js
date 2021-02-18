@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/paging-table'),
+      dir: require('path').join(__dirname, './coverage/Ionir'),
       subdir: '.',
       reporters: [
         { type: 'html' },

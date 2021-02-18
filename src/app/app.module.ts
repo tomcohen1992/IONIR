@@ -4,15 +4,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
 import { AppRoutingModule } from './app-routing.module';
-import { NavbarService } from './navbar/navbar.service';
+import { FiltersService } from './main/meteors/components/filters/filters.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
   ],
   imports: [
     BrowserModule,
@@ -21,7 +19,7 @@ import { NavbarService } from './navbar/navbar.service';
     HttpClientModule,
   ],
   providers: [
-    NavbarService
+    FiltersService
   ],
   bootstrap: [AppComponent]
 })

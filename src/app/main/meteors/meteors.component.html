@@ -1,0 +1,29 @@
+<div class="page-container" *ngIf="isFetchData$ | async ;else loading">
+  <app-filters [newFilter]="newFilter" [years]="years" [size]="filteredData.length"></app-filters>
+
+  <app-table [dataSet]="filteredData"></app-table>
+
+  <div *ngIf="message" class="modal" [ngClass]="{'is-active': message}">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Message</p>
+        <button (click)="closeMessage()" class="delete" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+        <span class="modal-message">
+          {{message}}
+        </span>
+      </section>
+      <footer class="modal-card-foot">
+        <button (click)="closeMessage()" class="button">Confirm</button>
+      </footer>
+    </div>
+  </div>
+</div>
+
+<ng-template #loading>
+  <div class="progress-container">
+    <progress class="progress " max="100"></progress>
+  </div>
+</ng-template>

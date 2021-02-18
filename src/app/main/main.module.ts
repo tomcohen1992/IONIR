@@ -2,32 +2,28 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { MainRoutingModule } from './main-routing.module';
-import { InfiniteTableComponent } from './infinite-table/infinite-table.component';
-import { PaginationTableComponent } from './pagination-table/pagination-table.component';
-import { SearchComponent } from './shared/components/search/search.component';
 import { TableComponent } from './shared/components/table/table.component';
-import { PaginatorComponent } from './pagination-table/components/paginator/paginator.component';
 import { TableService } from './shared/services/table.service';
-import { SearchService } from './shared/services/search.service';
-import { PaginationService } from './shared/services/pagination.service';
 import { ApiService } from './shared/services/api.service';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AppOnlyDigitsDirective } from './shared/directives/numbersOnly.directive';
+import { FiltersComponent } from './meteors/components/filters/filters.component';
+import { MeteorsComponent } from './meteors/meteors.component';
 
 @NgModule({
   declarations: [
-    InfiniteTableComponent,
-    PaginationTableComponent,
-    SearchComponent,
+    MeteorsComponent,
     TableComponent,
-    PaginatorComponent,
+    FiltersComponent,
+    AppOnlyDigitsDirective,
   ],
   imports: [
     CommonModule,
-    MainRoutingModule
+    MainRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [
     TableService,
-    SearchService,
-    PaginationService,
     ApiService
   ]
 })

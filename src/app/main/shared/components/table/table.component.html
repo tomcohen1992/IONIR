@@ -1,27 +1,14 @@
- <div #tableContainer class="table-container">
-  <div *ngIf="(isLoading$ | async)" [ngClass]="{ 'pagination-loading': state === TableTypes.Pagination, 'infinite-loading': state === TableTypes.Infinite }">
-    <progress class="progress is-small is-primary" max="100"></progress>
-  </div>
-  <table class="table  is-scrollable">
+ <div  class="table-container">
+  <table [@tableAnim] class="table is-scrollable">
   <thead>
-  <tr>
-    <th *ngFor="let column of displayedColumns"><abbr title="column">{{TableColumns[column]}}</abbr></th>
+  <tr >
+    <th *ngFor="let column of displayedColumns">{{TableColumns[column]}}</th>
   </tr>
   </thead>
   <tbody>
-  <tr [@listAnimation] *ngFor="let row of dataSet; trackBy: trackByFn" [ngClass]="{'blur-row': isLoading$ | async}">
-    <th *ngFor="let column of displayedColumns" title="row[column]">{{row[column]}}</th>
+  <tr *ngFor="let row of dataSet; trackBy: trackByFn">
+    <th [@RowAnimation] *ngFor="let column of displayedColumns">{{row[column]}}</th>
   </tr>
   </tbody>
 </table>
 </div>
-
- <ng-container *ngIf="!dataSet.length">
-   <div class="no-result">
-     <span class="icon">
-       <i class="fas fa-search"></i>
-     </span>
-     <div>No results.</div>
-     <div>Please try another filters.</div>
-   </div>
- </ng-container>

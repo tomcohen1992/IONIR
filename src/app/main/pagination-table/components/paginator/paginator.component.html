@@ -1,4 +1,0 @@
-<nav class="pagination is-rounded" role="navigation" aria-label="pagination">
-  <a [ngClass]="{'disabled': currentPage === PaginatorLimits.firstPage || disabled}" (click)="pageChange(currentPage - 1)" class="pagination-previous">Previous Page</a>
-  <a [ngClass]="{'disabled': currentPage === PaginatorLimits.lastPage || disabled}" (click)="pageChange(currentPage + 1)" class="pagination-next">Next Page</a>
-</nav>
